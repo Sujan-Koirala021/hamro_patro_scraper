@@ -1,5 +1,6 @@
 import express from 'express';
 import newsRoute from './routes/news.route.js'
+import rashifalRoute from './routes/rashifal.route.js'
 import cors from  'cors';
 
 const app = express();
@@ -7,7 +8,9 @@ const app = express();
 const PORT = 3000; 
 
 app.use(cors())
-app.use("/api/v1", newsRoute)
+app.use("/api/v1/news", newsRoute)
+app.use("/api/v1/rashifal", rashifalRoute)
+
 
 app.listen(PORT,(req, res) => {
     console.log(`Listening to port ${PORT}`)
