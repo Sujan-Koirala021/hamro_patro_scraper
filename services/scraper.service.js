@@ -79,3 +79,30 @@ export const scrapeForex = async () => {
         throw new Error("Failed to fetch forex");
     }
 };
+
+export const scrapeGoldSilver = async () => {
+    try {
+        const url = "https://www.hamropatro.com/gold";
+        const { data } = await axios.get(url);
+        const $ = cheerio.load(data);
+        let updatedDateInfo = $('p b').text().trim()
+        const lastUpdated = updatedDateInfo.replace("Last Updated: ", "");
+
+        const prices = [];
+        const listItems = $('ul.gold-silver > li'); // Select all <li> within the "gold-silver" list
+
+        for (let i = 0; i < listItems.length; i += 2) { 
+            const itemType = $(listItems[i]).text().trim();
+            // cleanup whitespace sequence in price
+            const price = $(listItems[i + 1]).text().replace(/\s+/g, ' ').trim();
+            prices.push({
+                itemType,
+                price
+            });
+        }
+        return  {lastUpdated, prices};     
+    } catch (error) {
+        console.error("Error scraping gold silver price:", error);
+        throw new Error("Failed to fetch gold silve price");
+    }
+}
