@@ -13,6 +13,9 @@ This API scrapes Nepali news, rashifal, foreign exchange values and Gold Silver 
    ```bash
    git clone https://github.com/Sujan-Koirala021/hamro_patro_scraper
    ```
+   ```bash
+   cd hamro_patro_scraper
+   ```
 
 2. Install dependencies:
    ```bash
