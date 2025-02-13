@@ -10,7 +10,7 @@ export const scrapeNepaliNews = async () => {
         $(".newsCard").each((i, element) => {
             news.push({
                 title: $(element).find(".newsheadingMobile").text().trim(),
-                link: 'www.hamropatro.com' + $(element).find("a").attr("href"),
+                link: 'https://www.hamropatro.com' + $(element).find("a").attr("href"),
                 summary: $(element).find(".newsSummary").text().trim(),
             });
         });
@@ -34,7 +34,7 @@ export const scrapeRashifal = async () => {
         $('#rashifal .item').each((index, element) => {
             const title = $(element).find('h3').text().trim(); // Horoscope name
             const desc = $(element).find('.desc p').text().trim(); // Horoscope description
-            const href = 'www.hamropatro.com/' + $(element).closest('a').attr('href');
+            const href = 'https://www.hamropatro.com/' + $(element).closest('a').attr('href');
 
             rashifals.push({ title, desc, href });
         });
