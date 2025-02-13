@@ -116,14 +116,7 @@ This API scrapes Nepali news, rashifal, foreign exchange values and Gold Silver 
 - Express.js
 - Cheerio (for scraping)
 
-## Contributing
-1. Fork the repo.
-2. Create a feature branch.
-3. Commit changes and push.
-4. Open a pull request.
+## Disclaimer
 
----
-
-## License
-This project is licensed under MIT.
+This project is not affiliated with Hamro Patro. The scraped data belongs to Hamro Patro, and this project only serves as an educational tool for learning web scraping. Please review and comply with Hamro Patro's terms of use before deploying this scraper.
 
